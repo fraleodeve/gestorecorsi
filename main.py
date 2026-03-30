@@ -1,4 +1,3 @@
-
 import flet as ft
 
 from UI.controller import Controller
