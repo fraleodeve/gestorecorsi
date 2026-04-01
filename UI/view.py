@@ -24,7 +24,9 @@ class View(ft.UserControl):
 
     def load_interface(self):
         # title
-        self._title = ft.Text("Gestore Corsi - Edizione 2026", color="blue", size=24)
+        self._title = ft.Text("Gestore Corsi - Edizione 2026",
+                              color="blue",
+                              size=24)
         self._page.controls.append(self._title)
 
         # riga 1
@@ -32,16 +34,27 @@ class View(ft.UserControl):
                                  options=[ft.dropdown.Option("1"), ft.dropdown.Option("2")],
                                  width = 200)
 
-        self._btnPrintCorsiPD = ft.ElevatedButton(text = "Stampa corsi", on_click = self._controller.handlePrintCorsiPD, width = 300)
-        self._btnPrintIscrittiCorsiPD = ft.ElevatedButton(text = "Stampa numero iscritti", on_click = self._controller.handlePrintIscrittiCorsiPD, width = 300)
-        row1 = ft.Row([self._ddPD, self._btnPrintCorsiPD, self._btnPrintIscrittiCorsiPD])
+        self._btnPrintCorsiPD = ft.ElevatedButton(text = "Stampa corsi",
+                                                  on_click = self._controller.handlePrintCorsiPD,
+                                                  width = 300)
+        self._btnPrintIscrittiCorsiPD = ft.ElevatedButton(text = "Stampa numero iscritti",
+                                                          on_click = self._controller.handlePrintIscrittiCorsiPD,
+                                                          width = 300)
+        row1 = ft.Row([self._ddPD, self._btnPrintCorsiPD, self._btnPrintIscrittiCorsiPD],
+                      alignment=ft.MainAxisAlignment.CENTER)
 
         # riga 2
-        self._ddCodIns = ft.Dropdown(label = "Corsi", width=200) # non sappiamo opzioni
+        self._ddCodIns = ft.Dropdown(label = "Corsi",
+                                     width=200) # non sappiamo opzioni
         self._controller.fillddCodIns()
-        self._btnPrintIscrittiCodIns = ft.ElevatedButton(text = "Stampa iscritti al corso", on_click = self._controller.handlePrintIscrittiCodIns, width = 300)
-        self._btnPrintCDSCodIns = ft.ElevatedButton(text = "Stampa CDS afferenti", on_click = self._controller.handlePrintCDSCodIns, width = 300)
-        row2 = ft.Row([self._ddCodIns, self._btnPrintIscrittiCodIns,self._btnPrintCDSCodIns])
+        self._btnPrintIscrittiCodIns = ft.ElevatedButton(text = "Stampa iscritti al corso",
+                                                         on_click = self._controller.handlePrintIscrittiCodIns,
+                                                         width = 300)
+        self._btnPrintCDSCodIns = ft.ElevatedButton(text = "Stampa CDS afferenti",
+                                                    on_click = self._controller.handlePrintCDSCodIns,
+                                                    width = 300)
+        row2 = ft.Row([self._ddCodIns, self._btnPrintIscrittiCodIns,self._btnPrintCDSCodIns],
+                      alignment=ft.MainAxisAlignment.CENTER)
 
         self._page.add(row1, row2)
 
